@@ -154,6 +154,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\converter\converter\converter.vcxproj">
+      <Project>{444fbe0c-201c-451e-83da-9b05b8e4643b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\converter_10_p\converter_10_p\converter_10_p.vcxproj">
+      <Project>{6c108892-750d-47e1-937a-b006cdc8a581}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\RefEditor\RefEditor.vcxproj">
       <Project>{cedc656c-39db-40e5-a8cc-c6f3f684e512}</Project>
     </ProjectReference>

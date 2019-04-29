@@ -18,14 +18,15 @@ namespace Interface {
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
+		RefControl::ADTControl * A;
 		MyForm()
 		{
 			InitializeComponent();
+			A = new RefControl::ADTControl();
 			//
 			//TODO: добавьте код конструктора
 			//
 		}
-		ADTControl^ A;
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.
@@ -414,7 +415,8 @@ namespace Interface {
 		////add
 	}
 	private: System::Void button17_Click(System::Object^  sender, System::EventArgs^  e) {
-		A->Ed.AddZero();
+		//A->Ed.AddZero();
+		A->Ed->AddZero();
 	}
 };
 }

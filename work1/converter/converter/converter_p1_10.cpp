@@ -1,14 +1,14 @@
 #include "stdafx.h"
 #include "converter_p1_10.h"
 
-string converter_p1_10::DO(double n, int p, int c) {
-	string NUM;
+std::string converter_p1_10::DO(double n, int p, int c) {
+	std::string NUM;
 	if (p <= 1 || c < 0)
-		return string();
+		return std::string();
 	double A = abs(n);
 	if (A - int(A) == 0.0) {
 		int t = int(A);
-		vector<int> out;
+		std::vector<int> out;
 		while (t > 0) {
 			out.push_back(t%p);
 			t /= p;
@@ -19,7 +19,7 @@ string converter_p1_10::DO(double n, int p, int c) {
 				NUM += temp;
 			}
 			else
-				NUM += to_string(out[i]);
+				NUM += std::to_string(out[i]);
 		}
 		/*NUM += ".";
 		for (int i = 0; i < c; ++i) {
@@ -28,7 +28,7 @@ string converter_p1_10::DO(double n, int p, int c) {
 	}
 	else {
 		int t = int(A);
-		vector<int> out;
+		std::vector<int> out;
 		while (t > 0) {
 			out.push_back(t%p);
 			t /= p;
@@ -39,7 +39,7 @@ string converter_p1_10::DO(double n, int p, int c) {
 				NUM += temp;
 			}
 			else
-				NUM += to_string(out[i]);
+				NUM += std::to_string(out[i]);
 		}
 		double z = A - int(A);
 		if (out.size() == 0)
@@ -62,7 +62,7 @@ string converter_p1_10::DO(double n, int p, int c) {
 				NUM += temp;
 			}
 			else
-				NUM += to_string(out[i]);
+				NUM += std::to_string(out[i]);
 		}
 	}
 	if (n < 0)
@@ -84,16 +84,16 @@ char converter_p1_10::int_to_char(int d)
 	}
 }
 
-string converter_p1_10::int_to_P(int n, int p)
+std::string converter_p1_10::int_to_P(int n, int p)
 {
 	return DO(n, p, 0);
 }
 
-string converter_p1_10::fit_to_P(double n, int p, int c)
+std::string converter_p1_10::fit_to_P(double n, int p, int c)
 {
 	if (n < 1 && n > -1)
 		return DO(n, p, c);
 	else
-		return string();
+		return std::string();
 }
 

@@ -2,7 +2,7 @@
 #include "converter_10_p2.h"
 
 
-double subconvert(string P_num, int P)
+double subconvert(std::string P_num, int P)
 {
 	if (P_num[0] == '-')
 		P_num = P_num.substr(1, P_num.length());
@@ -29,31 +29,31 @@ double subconvert(string P_num, int P)
 }
 
 
-double converter_10_p2::dval(string P_num, int P)
+double converter_10_p2::dval(std::string P_num, int P)
 {
 	//regex r1("-?[1-9]+[[:d:]]*+[.]+[[:d:]]*+[1-9]");
-	regex r1;
-	regex r2;
+	std::regex r1;
+	std::regex r2;
 	if (P > 10) {
-		string end = "A";
+		std::string end = "A";
 		end[0] += P - 11;
-		string asdf = "[1-9]";
-		string R1 = string("-?([1-9]*[") + string("A-") + end + string("]*)+([0-9]*[") + string("A-") + end + string("]*)*");
-		string R2 = string("([0-9]*[") + string("A-") + end + string("]*)+([1-9]*[") + string("A-") + end + string("]*)*");
-		r1 = regex(R1);
-		r2 = regex(R2.c_str());
+		std::string asdf = "[1-9]";
+		std::string R1 = std::string("-?([1-9]*[A-") + end + std::string("]*)+([0-9]*[A-") + end + std::string("]*)*");
+		std::string R2 = std::string("([0-9]*[A-") + end + std::string("]*)+([1-9]*[A-") + end + std::string("]*)*");
+		r1 = std::regex(R1);
+		r2 = std::regex(R2.c_str());
 	}
 	else {
-		string end = "0";
+		std::string end = "0";
 		end[0] += P - 1;
-		string R1 = string("-?[1-") + end + string("]+[0-") + end + string("]*");
-		string R2 = string("[0-") + end + string("]+[1-") + end + string("]*");
-		r2 = regex(R2);
-		r1 = regex(R1);
+		std::string R1 = std::string("-?[1-") + end + std::string("]+[0-") + end + std::string("]*");
+		std::string R2 = std::string("([0-") + end + std::string("]*)+[1-") + end + std::string("]");
+		r2 = std::regex(R2);
+		r1 = std::regex(R1);
 	}
 	double number = 0;
-	string a, b = "0";
-	if (P_num.find('.') != string::npos)
+	std::string a, b = "0";
+	if (P_num.find('.') != std::string::npos)
 	{
 		int f = P_num.find('.');
 		a = P_num.substr(0, f);
@@ -88,7 +88,7 @@ double converter_10_p2::char_To_num(char ch)
 		return 0;
 }
 
-double converter_10_p2::convert(string P_num, int P, double weight)
+double converter_10_p2::convert(std::string P_num, int P, double weight)
 {
 	return 0.0;
 }

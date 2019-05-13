@@ -11,17 +11,17 @@ int Record::getp2()
 	return p2;
 }
 
-string Record::getn1()
+std::string Record::getn1()
 {
 	return number1;
 }
 
-string Record::getn2()
+std::string Record::getn2()
 {
 	return number2;
 }
 
-string Record::Rewtite()
+std::string Record::Rewtite()
 {
 	return number1 + "->" + number2;
 }

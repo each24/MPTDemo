@@ -17,7 +17,7 @@ Record History::at(int I)
 		if (I > L.size()) {
 			return Record();
 		}
-		list<Record> it = list<Record>(L.begin(), L.end());
+		std::list<Record> it = std::list<Record>(L.begin(), L.end());
 		for (int i = 0; i < I; ++i) {
 			it.pop_front();
 		}
@@ -27,7 +27,7 @@ Record History::at(int I)
 		return Record();
 }
 
-void History::AddRecord(int p1, int p2, string num1, string num2)
+void History::AddRecord(int p1, int p2, std::string num1, std::string num2)
 {
 	L.push_back(Record(p1, p2, num1, num2));
 }

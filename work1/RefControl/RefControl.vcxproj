@@ -160,6 +160,9 @@
     <ProjectReference Include="..\converter_10_p\converter_10_p\converter_10_p.vcxproj">
       <Project>{6c108892-750d-47e1-937a-b006cdc8a581}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\History\History\History.vcxproj">
+      <Project>{5d0841df-1965-42d8-a526-c97687fb5cee}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\RefEditor\RefEditor.vcxproj">
       <Project>{cedc656c-39db-40e5-a8cc-c6f3f684e512}</Project>
     </ProjectReference>
